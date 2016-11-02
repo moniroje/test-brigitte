@@ -1,9 +1,6 @@
-/* quelleCaseTableauContientCertaineValeur
- * Écrire une fonction f ayant en paramètres un tableau t de taille quelconque
- * et un entier n indiquant la taille du tableau. f doit renvoyer par un return
- * un entier égal à l'indice de la première case du tableau (parmi les n)
- * contenant une valeur comprise entre min et MAX. S'il n'existe pas de telle
- * valeur, la fonction renvoie -1. Tester cette fonction. */
+/* 20161102: le code est bon puisque j'ai la console où je mets mes valaurs;
+ * l'ennui c'est que si je mets une fourchette minMAX autour d'une des valeurs,
+ * le job me répond bêtement:"Pas de valeurs dans la fourchette que tu as fixée."*/
 
 #include<iostream>
 using namespace std;
