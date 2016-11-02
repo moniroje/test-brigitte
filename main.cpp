@@ -1,10 +1,3 @@
-/* quelleCaseTableauContientCertaineValeur
- * Écrire une fonction f ayant en paramètres un tableau t de taille quelconque
- * et un entier n indiquant la taille du tableau. f doit renvoyer par un return
- * un entier égal à l'indice de la première case du tableau (parmi les n)
- * contenant une valeur comprise entre min et MAX. S'il n'existe pas de telle
- * valeur, la fonction renvoie -1. Tester cette fonction. */
-
 #include<iostream>
 using namespace std;
 // je crée la variable i dont j'aurais besoin pour itérer dans le tableau:
@@ -38,6 +31,9 @@ int f(int t[], int n)  /* ce qui => ! unused parameter 'n' si j'utilise plus bas
       int ind=-1; /* je déclare et initialise ind qui contiendra le numéro de
                    * la case gagnante; ou bien -1; je fais de même pour la
                    * variable d'itération i dans le cadre de cette fonction:*/
+      /* int valInFork=0; * 20161102: je déclare et initialise cette variable qui
+                        * contiendra la valeur dans la fourchette pour qu'on
+                        * puisse la connaître */
       int i=0; // la première case se nomme 0 (variable locale)
       cout<<"Tape la valeur minimale de ta recherche: "<<min<<" : ";
       cin>> min;
@@ -55,10 +51,13 @@ int f(int t[], int n)  /* ce qui => ! unused parameter 'n' si j'utilise plus bas
                                * même si j'en ai mis une. */
         {
          // si t[i] dans la fourchette gagnante, tu mets la valeur i dans ind
-         if(t[i]>=min && t[i]<=MAX)ind=i;
-         // et comme ind n'est pas -1, hop, la boucle while s'arrête
-         else i++; // si ce n'est pas le cas, alors tu vas à la case suivante
+         if(t[i]>=min && t[i]<=MAX) ind=i; // comme ind n'est pas -1, boucle while s'arrête
+         /* if(t[i]>=min && t[i]<=MAX) valInFork= t[i]; * 20161102 et, dans ce cas-là, je
+                                                    * mets la valeur qui est dans cette case */
+         else i++; // si ce n'est pas le cas if, alors tu vas à la case suivante
          return ind;  // quand la boucle while s'arrête, ça retourne ind
+         /* return valInFork; * 20161102: plusieurs instructions return peuvent figurer dans 
+                            * la définition d'une fonction: note c+ec012 */
         }
     }  // fin de la fonction f() => ! control reaches  end of non-void function
 
